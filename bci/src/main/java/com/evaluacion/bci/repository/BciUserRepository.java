@@ -9,8 +9,13 @@ import java.util.UUID;
 
 public interface BciUserRepository extends JpaRepository<BciUser, UUID> {
 
-    @Query("SELECT B.id , B.created , B.modified , B.last_login , B.isactive FROM BciUser B WHERE B.email = :email")
-     List<UserRequestOutDTO> findByEmail(String email) ;
+    @Query("SELECT new com.evaluacion.bci.dto.UserRequestOutDTO" +
+            "(user.id , user.created , user.modified , user.last_login , user.isactive) " +
+            "FROM BciUser user Where user.email=:email ")
+     List<UserRequestOutDTO> SearchByEmail(String email) ;
+
+    @Query("SELECT b.email FROM BciUser b WHERE b.email = :email")
+    String ReturnByEmail(String email) ;
 
 
 }

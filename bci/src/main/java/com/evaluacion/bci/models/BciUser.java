@@ -1,11 +1,10 @@
 
 package com.evaluacion.bci.models;
-import lombok.*;
+import lombok.Data;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -22,14 +21,9 @@ public class BciUser {
     @Column(name = "ID" ,columnDefinition = "UUID")
     private UUID id ;
 
-    @NotNull
+
     private String name ;
-
-    @NotNull
-    @Email
     private String email ;
-
-    @NotNull
     private String password ;
 
     @Column(columnDefinition = "DATE")
@@ -124,6 +118,4 @@ public class BciUser {
     public void setBciUserPhone(List<Phones> bciUserPhone) {
         this.bciUserPhone = bciUserPhone;
     }
-
-
 }

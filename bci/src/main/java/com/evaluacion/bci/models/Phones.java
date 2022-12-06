@@ -35,7 +35,7 @@ public class Phones {
     @JsonProperty("contrycode")
     private String countrycode ;
 
-    
+
     public Phones() {
     }
 
@@ -72,14 +72,5 @@ public class Phones {
         this.countrycode = countrycode;
     }
 
-    /*public BciUser getBciUser() {
-        return bciUser;
-    }
-
-    public void setBciUser(BciUser bciUser) {
-        this.bciUser = bciUser;
-    }
-
-     */
 
 }
